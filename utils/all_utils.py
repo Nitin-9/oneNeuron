@@ -7,6 +7,16 @@ import os
 plt.style.use("fivethirtyeight")
 
 def prepare_data(df):
+  # docstring(an illustration of method)
+  """it is used to seprate features and lebels
+
+  Args:
+      df (pd.DataFrame): it is pandas data frame
+
+  Returns:
+      [tuple]: it returns the tuple of dependent variables and independent variable
+  """
+
   x = df.drop("y",axis=1)
   y = df["y"]
   return x,y
@@ -22,6 +32,13 @@ def save_model(model,filename):
 
 
 def save_plot(df, file_name,model):
+ # in Pycharm generally we use this type docstring
+ """
+ : param df: it is a Dta Frame
+ : param file-name: this is the path to save the plot
+ : param model: trained model
+  
+  """
   def _create_base_plot(df):
     df.plot(kind="scatter", x="x1", y="x2", c="y", s=100, cmap="winter")
     plt.axhline(y=0, color = "black", linestyle = "--", linewidth=1)
